@@ -9,3 +9,81 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
  */
+
+let difficoltà = document.getElementById("difficoltà")
+
+let sceltaDifficolta;
+
+
+function avviaGioco(){
+
+    if(difficoltà.value == 1){
+
+        sceltaDifficolta = 100
+
+    }else if(difficoltà.value == 2){
+
+        sceltaDifficolta = 81
+
+    }else{
+
+        sceltaDifficolta = 49
+
+    }
+
+    let box = document.getElementById("box")
+
+    box.innerHTML = ""
+
+    for (let x = 1; x <= sceltaDifficolta; x++) {
+
+
+        let divNuovo = document.createElement("div")
+        divNuovo.classList.add("box-js")
+
+
+        if(sceltaDifficolta == 81){
+
+            divNuovo.classList.add("ms-w-normale")
+
+        }else if( sceltaDifficolta == 49){
+
+            divNuovo.classList.add("ms-w-difficile")
+
+        }
+
+        divNuovo.addEventListener('click' , function(){
+
+            this.classList.toggle('ms-color-custom')
+            console.log(this)
+            console.log(`il numero selezionato è: ${x}`);
+
+        })
+
+
+        if (x % 3 == 0 && x % 5 == 0) {
+
+            divNuovo.innerHTML = `<h4>${x}</h4>`;
+
+
+        } else if (x % 5 == 0) {
+
+            divNuovo.innerHTML = `<h4>${x}</h4>`;
+
+
+        } else if (x % 3 == 0) {
+
+            divNuovo.innerHTML = `<h4>${x}</h4>`;
+
+
+        } else {
+
+            divNuovo.innerHTML = `<h4>${x}</h4>`;
+
+        }
+
+        box.append(divNuovo)
+
+    }
+
+}
