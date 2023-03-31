@@ -2,3 +2,18 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+header,
+footer{
+    background-color: white;
+    height: 10vh;
+}
+
+main{
+    background-color: #7fffd4;
+    height: 80vh;
+}
+
+img{
+    width: 5%;
+}
