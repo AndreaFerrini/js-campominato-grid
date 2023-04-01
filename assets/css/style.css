@@ -52,6 +52,10 @@ img{
     color: goldenrod;
 }
 
+.fa-heart {
+    color: red;
+}
+
 .ms-w-normale{
 
     width: calc(100% / 9);
@@ -61,3 +65,4 @@ img{
 
     width: calc(100% / 7);
 }
+
